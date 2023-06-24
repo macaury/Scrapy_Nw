@@ -23,7 +23,8 @@ class CrawlGene(scrapy.Spider):
                 noticia_dict = {'titulo': titulo, 'imagem': imagem, 'link': link}
                 noticias.append(noticia_dict)
 
-    
+                print (noticias)
+                
             return noticias
             
     
