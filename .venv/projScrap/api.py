@@ -1,8 +1,8 @@
-from flask import Flask
-from Journal import default
+from flask import Flask, render_template
+from Journal import G1,ISTOE
 
 app = Flask(__name__ , template_folder='template')
-
+app.debug = True  
 
 @app.route("/main")
 def scrape():
@@ -17,14 +17,16 @@ import json
 @app.route("/teste")
 def Scra_New():
 
-   url = "https://g1.globo.com/"
 
-   dados = default(url)
+   dados = ISTOE() 
+   
+   #dados = G1()
 
+   
 
    return  dados
-   #return render_template('home.html')
+   #return render_template('home.html',dados)
 
 
 if __name__ == '__main__':
-    app.run()
+   app.run(host='0.0.0.0', port=3000)

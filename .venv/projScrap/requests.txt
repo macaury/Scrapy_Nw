@@ -1,5 +1,6 @@
-titulos = ok 
-links = ok 
-img = ok
-
-logo
+selenium
+flask
+beautifulsoup4
+requests
+scrapy
+html5lib
