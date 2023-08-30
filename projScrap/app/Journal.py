@@ -5,8 +5,6 @@ from bs4 import BeautifulSoup
 
 from flask import jsonify
 
-from django.core import serializers
-
 import json
 
 def G1():
@@ -52,7 +50,7 @@ def G1():
                 cont += 1
 
             # Converte a lista de dicionários em uma string JSON
-            json_data = json.dumps(data,    ensure_ascii=False)
+            json_data = json.dumps(data,ensure_ascii=False)
 
     print('\n\n','scrape finalizado',cont,'\n\n')
 
@@ -90,10 +88,8 @@ def ISTOE():
             break
 
     # Converte a lista de dicionários em uma string JSON
-    json_data = serializers.serialize("xml",data)
+    json_data = json.dumps(data,ensure_ascii=False)
 
     print('\n\n', count, ' posts coletados\n\n')
 
     return (json_data)
-
-
